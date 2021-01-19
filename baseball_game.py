@@ -116,10 +116,8 @@ def is_validated_number(user_input_number):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    if is_digit(user_input_number) and is_between_100_and_999(user_input_number) and is_duplicated_number(user_input_number):
-        return True
     # ==================================
-    return False
+    return is_digit(user_input_number) and is_between_100_and_999(user_input_number) and is_duplicated_number(user_input_number)
 
 
 def get_not_duplicated_three_digit_number():
@@ -127,7 +125,7 @@ def get_not_duplicated_three_digit_number():
     # Input:
     #   - None : 입력값이 없음
     # Output:
-    #   - 중복되는 숫자가 없는 3자리 정수값을 램덤하게 생성하여 반환함
+    #   - 중복되는 숫자가 없는 3자리 정수값을 랜덤하게 생성하여 반환함
     #     정수값으로 문자열이 아님
     # Examples:
     #   >>> import baseball_game as bg
@@ -145,7 +143,7 @@ def get_not_duplicated_three_digit_number():
     # get_random_number() 함수를 사용하여 random number 생성
     result = 'a'
     while not is_validated_number(result):
-        result = get_random_number()
+        result = str(get_random_number())
     # ==================================
     return result
 
