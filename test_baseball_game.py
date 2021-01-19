@@ -120,7 +120,9 @@ class TestBaseballGame(unittest.TestCase):
             with patch('sys.stdout', new=StringIO()) as fakeOutput:
                 bg.main()
                 console = fakeOutput.getvalue().strip().split("\n")
+                print(console)
                 for i in range(2,6):
+                    print(console[i].upper())
                     self.assertTrue("WRONG INPUT" in console[i].upper())
 
         input_list = [str(value) for value in range(101, 1000)]
